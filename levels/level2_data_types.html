@@ -170,7 +170,7 @@
       const [type, text] = data.split('|');
 
       // Prevent duplicates
-      if ([...e.currentTarget.children].some(child => child.textContent === text)) return;
+      //if ([...e.currentTarget.children].some(child => child.textContent === text)) return;
 
 
       // Create a new element inside the dropzone
@@ -188,9 +188,9 @@
   e.currentTarget.appendChild(newElem);
 
       // Prevent duplicates
-     /* if (![...e.currentTarget.children].some(child => child.textContent === text)) {
+      if (![...e.currentTarget.children].some(child => child.textContent === text)) {
         e.currentTarget.appendChild(newElem);
-
+/*
         // Remove original draggable from container
         const allDraggables = [...dragContainer.children];
         const original = allDraggables.find(el => el.textContent === text);
