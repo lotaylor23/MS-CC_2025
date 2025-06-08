@@ -122,11 +122,11 @@
 
   <button id="checkBtn">Check Answers</button>
   <div id="result">
-    <button id="nextLevelBtn" style="display:none; margin: 20px auto; padding: 12px 25px; font-size: 18px; border-radius: 6px; cursor: pointer; background-color: #28a745; color: white;">
-  Next Level
-</button>
-    
-  </div>
+  <p id="feedback"></p> <!-- This will hold the result text -->
+  <button id="nextLevelBtn" style="display:none; margin: 20px auto; padding: 12px 25px; font-size: 18px; border-radius: 6px; cursor: pointer; background-color: #28a745; color: white;">
+    Next Level
+  </button>
+</div>
 
   <footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
 
@@ -229,11 +229,12 @@
     return;
   } 
 
-      resultDiv.textContent = `You got ${correct} out of ${total} correct. ${
-        correct === total
-          ? "Great job! You're ready for the next stage."
-          : "Check the red items and try again."
-      }`;
+      const feedback = document.getElementById('feedback'); // add this line at the top if needed
+feedback.textContent = `You got ${correct} out of ${total} correct. ${
+  correct === total
+    ? "Great job! You're ready for the next stage."
+    : "Check the red items and try again."
+}`;
       //  Show "Next Level" button only if all answers are correct
   if (correct === total && total === 8) {
     document.getElementById('nextLevelBtn').style.display = 'inline-block';
