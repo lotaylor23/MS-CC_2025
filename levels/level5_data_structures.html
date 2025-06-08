@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stage 5: Data Structures Memory Match</title>
+<link rel="stylesheet" href="../style.css" />
+<style>
+  body {
+    max-width: 700px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+    text-align: center;
+  }
+  h2 {
+    color: #0066cc;
+  }
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .card {
+    width: 140px;
+    height: 100px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+    perspective: 600px;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .card-front {
+    background-color: #0066cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-back {
+    background-color: #f0f4fb;
+    color: #222;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  #message {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+  }
+  footer {
+    margin-top: 30px;
+  }
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>Stage 5: Data Structures Memory Match</h2>
+<p>Match the Python data structure with its description or example.</p>
+
+<div id="game-board"></div>
+<div id="message"></div>
+
+<footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
+
+<script>
+  // Pairs to match: term <-> description/example
+  const pairs = [
+    { id: 1, type: 'term', content: 'List' },
+    { id: 1, type: 'desc', content: 'An ordered, mutable collection of items, e.g. [1, 2, 3]' },
+    { id: 2, type: 'term', content: 'Dictionary' },
+    { id: 2, type: 'desc', content: 'Key-value pairs, unordered, e.g. {"name": "Alice", "age": 25}' },
+    { id: 3, type: 'term', content: 'Tuple' },
+    { id: 3, type: 'desc', content: 'An ordered, immutable collection of items, e.g. (1, 2, 3)' },
+    { id: 4, type: 'term', content: 'Set' },
+    { id: 4, type: 'desc', content: 'An unordered collection of unique items, e.g. {1, 2, 3}' },
+  ];
+
+  // Duplicate and shuffle
+  let cards = [...pairs];
+  cards = cards.sort(() => 0.5 - Math.random());
+
+  const gameBoard = document.getElementById('game-board');
+  let flippedCards = [];
+  let matchedCount = 0;
+
+  // Create cards DOM
+  cards.forEach(card => {
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('card');
+    cardElement.dataset.id = card.id;
+    cardElement.dataset.type = card.type;
+
+    cardElement.innerHTML = `
+      <div class="card-inner">
+        <div class="card-front">?</div>
+        <div class="card-back">${card.content}</div>
+      </div>
+    `;
+
+    cardElement.addEventListener('click', () => flipCard(cardElement));
+    gameBoard.appendChild(cardElement);
+  });
+
+  function flipCard(card) {
+    if (flippedCards.length === 2 || card.classList.contains('flipped')) return;
+
+    card.classList.add('flipped');
+    flippedCards.push(card);
+
+    if (flippedCards.length === 2) {
+      checkMatch();
+    }
+  }
+
+  function checkMatch() {
+    const [card1, card2] = flippedCards;
+    if (
+      card1.dataset.id === card2.dataset.id &&
+      card1.dataset.type !== card2.dataset.type
+    ) {
+      matchedCount++;
+      flippedCards = [];
+      if (matchedCount === pairs.length / 2) {
+        document.getElementById('message').textContent = '🎉 Congratulations! You matched all pairs!';
+      }
+    } else {
+      setTimeout(() => {
+        card1.classList.remove('flipped');
+        card2.classList.remove('flipped');
+        flippedCards = [];
+      }, 1200);
+    }
+  }
+</script>
+
+</body>
+</html>
