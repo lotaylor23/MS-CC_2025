@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stage 1: Introduction to Python</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .comic-container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px #ccc;
+      font-family: Arial, sans-serif;
+    }
+    .comic-frame {
+      border: 2px solid #0066cc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #e3f0ff;
+    }
+    .comic-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+    h2 {
+      color: #0066cc;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .quiz {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    .quiz h3 {
+      margin-top: 0;
+    }
+    .quiz-question {
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #004a99;
+    }
+    #quiz-result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="comic-container">
+    <h2>Welcome to Python!</h2>
+
+    <div class="comic-frame">
+      <p><strong>Python</strong> is a popular, beginner-friendly programming language used for web development, data science, AI, and more!</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" />
+    </div>
+
+    <div class="comic-frame">
+      <p>It’s named after Monty Python, so it’s fun and powerful!</p>
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/Monty_Python_-_Logo.svg" alt="Monty Python Logo" />
+    </div>
+
+    <div class="comic-frame">
+      <p>Python code is easy to read and write, making it perfect for beginners.</p>
+      <img src="https://miro.medium.com/max/875/1*7eGgx7PGlNQ3KxwRKLh89Q.png" alt="Python code example" />
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz">
+      <h3>Quiz: Test your knowledge</h3>
+      <form id="quiz-form">
+        <div class="quiz-question">
+          <p>1. What is Python?</p>
+          <label><input type="radio" name="q1" value="a" /> A type of snake</label><br />
+          <label><input type="radio" name="q1" value="b" /> A programming language</label><br />
+          <label><input type="radio" name="q1" value="c" /> A kind of coffee</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>2. Python is best described as:</p>
+          <label><input type="radio" name="q2" value="a" /> Difficult and complex</label><br />
+          <label><input type="radio" name="q2" value="b" /> Beginner-friendly and easy to read</label><br />
+          <label><input type="radio" name="q2" value="c" /> Only for experts</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>3. Python is named after:</p>
+          <label><input type="radio" name="q3" value="a" /> The Python snake</label><br />
+          <label><input type="radio" name="q3" value="b" /> Monty Python comedy group</label><br />
+          <label><input type="radio" name="q3" value="c" /> Its creator’s pet</label>
+        </div>
+
+        <button type="submit">Submit Answers</button>
+      </form>
+
+      <div id="quiz-result"></div>
+    </div>
+
+    <footer>
+      <p><a href="../index.html">Back to Main Menu</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const quizForm = document.getElementById('quiz-form');
+    const quizResult = document.getElementById('quiz-result');
+
+    const answers = {
+      q1: 'b',
+      q2: 'b',
+      q3: 'b'
+    };
+
+    quizForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let score = 0;
+      const formData = new FormData(quizForm);
+
+      for (const [key, correctAnswer] of Object.entries(answers)) {
+        if (formData.get(key) === correctAnswer) {
+          score++;
+        }
+      }
+
+      quizResult.textContent = `You scored ${score} out of 3. ${
+        score === 3
+          ? "Awesome! You're ready for the next stage."
+          : "Try again or review the intro above."
+      }`;
+    });
+  </script>
+</body>
+</html>
