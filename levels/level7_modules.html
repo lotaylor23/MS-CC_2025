@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stage 7: Modules & Libraries Exploration</title>
+<link rel="stylesheet" href="../style.css" />
+<style>
+  body {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #ccc;
+  }
+  h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #map {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .module-category {
+    flex: 1 1 200px;
+    border: 2px solid #0066cc;
+    border-radius: 8px;
+    padding: 15px;
+    background: #e7f1ff;
+  }
+  .module-category h3 {
+    margin-top: 0;
+    color: #004a99;
+    border-bottom: 1px solid #004a99;
+    padding-bottom: 5px;
+  }
+  .module {
+    background-color: #fff;
+    border: 1.5px solid #0066cc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 6px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .module:hover {
+    background-color: #cce0ff;
+  }
+  #info {
+    margin-top: 25px;
+    padding: 15px;
+    border: 2px solid #0066cc;
+    border-radius: 8px;
+    background: #f0f4fb;
+    min-height: 120px;
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
+  footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>Stage 7: Modules & Libraries Exploration Mini-Quest</h2>
+<p>Click on a Python standard library module to learn more about it.</p>
+
+<div id="map">
+
+  <div class="module-category">
+    <h3>File and OS Modules</h3>
+    <div class="module" data-module="os">os</div>
+    <div class="module" data-module="sys">sys</div>
+    <div class="module" data-module="shutil">shutil</div>
+  </div>
+
+  <div class="module-category">
+    <h3>Data Handling</h3>
+    <div class="module" data-module="json">json</div>
+    <div class="module" data-module="csv">csv</div>
+    <div class="module" data-module="pickle">pickle</div>
+  </div>
+
+  <div class="module-category">
+    <h3>Math and Statistics</h3>
+    <div class="module" data-module="math">math</div>
+    <div class="module" data-module="random">random</div>
+    <div class="module" data-module="statistics">statistics</div>
+  </div>
+
+  <div class="module-category">
+    <h3>Networking & Internet</h3>
+    <div class="module" data-module="socket">socket</div>
+    <div class="module" data-module="urllib">urllib</div>
+    <div class="module" data-module="http">http</div>
+  </div>
+
+  <div class="module-category">
+    <h3>Utilities</h3>
+    <div class="module" data-module="datetime">datetime</div>
+    <div class="module" data-module="logging">logging</div>
+    <div class="module" data-module="threading">threading</div>
+  </div>
+
+</div>
+
+<div id="info">Click a module above to see its description and example.</div>
+
+<footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
+
+<script>
+  const moduleData = {
+    os: {
+      desc: "Provides functions to interact with the operating system.",
+      example: `import os
+print(os.getcwd())  # Prints current working directory`
+    },
+    sys: {
+      desc: "Provides access to variables and functions related to the Python interpreter.",
+      example: `import sys
+print(sys.version)  # Prints Python version`
+    },
+    shutil: {
+      desc: "High-level file operations like copying and archiving.",
+      example: `import shutil
+shutil.copy('source.txt', 'dest.txt')  # Copy a file`
+    },
+    json: {
+      desc: "Encode and decode JSON data.",
+      example: `import json
+data = {'name': 'Alice', 'age': 30}
+json_str = json.dumps(data)
+print(json_str)`
+    },
+    csv: {
+      desc: "Read and write CSV files.",
+      example: `import csv
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)`
+    },
+    pickle: {
+      desc: "Serialize and deserialize Python objects.",
+      example: `import pickle
+data = {'a': 1, 'b': 2}
+with open('data.pkl', 'wb') as f:
+    pickle.dump(data, f)`
+    },
+    math: {
+      desc: "Provides mathematical functions.",
+      example: `import math
+print(math.sqrt(16))  # Prints 4.0`
+    },
+    random: {
+      desc: "Generate random numbers and selections.",
+      example: `import random
+print(random.randint(1, 10))  # Random int between 1 and 10`
+    },
+    statistics: {
+      desc: "Basic statistical functions.",
+      example: `import statistics
+data = [1, 2, 3, 4, 5]
+print(statistics.mean(data))`
+    },
+    socket: {
+      desc: "Low-level networking interface.",
+      example: `import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)`
+    },
+    urllib: {
+      desc: "Work with URLs and HTTP requests.",
+      example: `from urllib import request
+response = request.urlopen('http://example.com')
+print(response.status)`
+    },
+    http: {
+      desc: "HTTP modules and client/server functionality.",
+      example: `from http.server import HTTPServer, BaseHTTPRequestHandler`
+    },
+    datetime: {
+      desc: "Work with dates and times.",
+      example: `import datetime
+print(datetime.datetime.now())`
+    },
+    logging: {
+      desc: "Flexible logging system.",
+      example: `import logging
+logging.warning('This is a warning!')`
+    },
+    threading: {
+      desc: "Run code concurrently using threads.",
+      example: `import threading
+def worker():
+    print("Worker thread")
+t = threading.Thread(target=worker)
+t.start()`
+    },
+  };
+
+  const modules = document.querySelectorAll('.module');
+  const infoDiv = document.getElementById('info');
+
+  modules.forEach(mod => {
+    mod.addEventListener('click', () => {
+      const modName = mod.dataset.module;
+      const data = moduleData[modName];
+      if (data) {
+        infoDiv.innerHTML = `<strong>${modName}</strong>: ${data.desc}\n\nExample:\n<pre>${data.example}</pre>`;
+      } else {
+        infoDiv.textContent = "Information not found.";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
