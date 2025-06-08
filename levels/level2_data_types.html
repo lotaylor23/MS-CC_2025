@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stage 2: Data Types Drag & Drop</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    h2 {
+      color: #0066cc;
+      text-align: center;
+    }
+
+    .instructions {
+      margin-bottom: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .drag-container, .drop-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .draggable {
+      padding: 10px 15px;
+      background: #e3f0ff;
+      border: 2px solid #0066cc;
+      border-radius: 8px;
+      cursor: grab;
+      user-select: none;
+      font-weight: bold;
+      font-size: 16px;
+      min-width: 70px;
+      text-align: center;
+    }
+
+    .dropzone {
+      border: 2px dashed #aaa;
+      border-radius: 8px;
+      width: 180px;
+      min-height: 100px;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #444;
+      background: #f0f4fb;
+    }
+
+    .dropzone.over {
+      border-color: #0066cc;
+      background-color: #d6e6ff;
+    }
+
+    #checkBtn {
+      display: block;
+      margin: 0 auto 20px auto;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #checkBtn:hover {
+      background-color: #004a99;
+    }
+
+    #result {
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Stage 2: Sort the Data Types</h2>
+  <p class="instructions">Drag each value into the correct data type box.</p>
+
+  <div class="drag-container" id="drag-items">
+    <div class="draggable" draggable="true" data-type="integer">42</div>
+    <div class="draggable" draggable="true" data-type="string">"hello"</div>
+    <div class="draggable" draggable="true" data-type="boolean">True</div>
+    <div class="draggable" draggable="true" data-type="float">3.14</div>
+    <div class="draggable" draggable="true" data-type="string">"Python"</div>
+    <div class="draggable" draggable="true" data-type="boolean">False</div>
+    <div class="draggable" draggable="true" data-type="integer">0</div>
+    <div class="draggable" draggable="true" data-type="float">2.718</div>
+  </div>
+
+  <div class="drop-container">
+    <div class="dropzone" data-accept="integer">Integers</div>
+    <div class="dropzone" data-accept="float">Floats</div>
+    <div class="dropzone" data-accept="string">Strings</div>
+    <div class="dropzone" data-accept="boolean">Booleans</div>
+  </div>
+
+  <button id="checkBtn">Check Answers</button>
+  <div id="result"></div>
+
+  <footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
+
+  <script>
+    const draggables = document.querySelectorAll('.draggable');
+    const dropzones = document.querySelectorAll('.dropzone');
+    const resultDiv = document.getElementById('result');
+    const checkBtn = document.getElementById('checkBtn');
+    const dragContainer = document.getElementById('drag-items');
+
+    draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', dragStart);
+    });
+
+    dropzones.forEach(zone => {
+      zone.addEventListener('dragover', dragOver);
+      zone.addEventListener('dragleave', dragLeave);
+      zone.addEventListener('drop', drop);
+    });
+
+    function dragStart(e) {
+      e.dataTransfer.setData('text/plain', e.target.dataset.type + '|' + e.target.textContent);
+      e.dataTransfer.effectAllowed = 'move';
+      // Save reference to dragged element id or text for drop removal
+      e.dataTransfer.setData('text/id', e.target.textContent);
+    }
+
+    function dragOver(e) {
+      e.preventDefault();
+      e.currentTarget.classList.add('over');
+    }
+
+    function dragLeave(e) {
+      e.currentTarget.classList.remove('over');
+    }
+
+    function drop(e) {
+      e.preventDefault();
+      e.currentTarget.classList.remove('over');
+      const data = e.dataTransfer.getData('text/plain');
+      const [type, text] = data.split('|');
+
+      // Create a new element inside the dropzone
+      const newElem = document.createElement('div');
+      newElem.textContent = text;
+      newElem.classList.add('draggable');
+      newElem.setAttribute('data-type', type);
+      newElem.setAttribute('draggable', 'false'); // Disable dragging from dropzone
+
+      // Prevent duplicates
+      if (![...e.currentTarget.children].some(child => child.textContent === text)) {
+        e.currentTarget.appendChild(newElem);
+
+        // Remove original draggable from container
+        const allDraggables = [...dragContainer.children];
+        const original = allDraggables.find(el => el.textContent === text);
+        if (original) original.remove();
+      }
+    }
+
+    checkBtn.addEventListener('click', () => {
+      let total = 0;
+      let correct = 0;
+
+      dropzones.forEach(zone => {
+        const acceptType = zone.dataset.accept;
+        [...zone.children].forEach(child => {
+          total++;
+          if (child.dataset.type === acceptType) correct++;
+          else child.style.color = 'red'; // highlight wrong answers
+        });
+      });
+
+      if (total === 0) {
+        resultDiv.textContent = 'Please sort at least one item.';
+        return;
+      }
+
+      resultDiv.textContent = `You got ${correct} out of ${total} correct. ${
+        correct === total
+          ? "Great job! You're ready for the next stage."
+          : "Check the red items and try again."
+      }`;
+    });
+  </script>
+</body>
+</html>
