@@ -210,6 +210,10 @@
           ? "Great job! You're ready for the next stage."
           : "Check the red items and try again."
       }`;
+      //  Show "Next Level" button only if all answers are correct
+  if (correct === total) {
+    document.getElementById('nextLevelBtn').style.display = 'inline-block';
+  }
     });
   </script>
   <script src="../script.js"></script>
