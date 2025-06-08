@@ -174,7 +174,7 @@
       newElem.textContent = text;
       newElem.classList.add('draggable');
       newElem.setAttribute('data-type', type);
-      newElem.setAttribute('draggable', 'false'); // Disable dragging from dropzone
+      //newElem.setAttribute('draggable', 'false'); // Disable dragging from dropzone
 
       // Prevent duplicates
       if (![...e.currentTarget.children].some(child => child.textContent === text)) {
