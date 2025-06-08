@@ -135,17 +135,17 @@
       q2: 'b',
       q3: 'b'
     };
-    startTimer(60, () => {
-  alert('Time is up! Try again or move on.');
+  //  startTimer(60, () => {
+ // alert('Time is up! Try again or move on.');
   // Optionally disable inputs or show “Next Level” button here
-});
+//});
 
     // Example: after quiz passed or level complete:
 function onLevelComplete() {
   nextLevelBtn.style.display = 'inline-block';
   // Change href to the next level:
   nextLevelBtn.onclick = () => {
-    window.location.href = 'levels/level2_data_types.html'; // Adjust for each level
+    window.location.href = '../levels/level2_data_types.html'; // Adjust for each level
   };
 }
 
@@ -176,5 +176,14 @@ function onLevelComplete() {
 <button id="nextLevelBtn" style="display:none; margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor:pointer;">
   Next Level
 </button>
+  <script src="../script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    startTimer(60, () => {
+      alert('Time is up! Try again or move on.');
+      document.getElementById('nextLevelBtn').style.display = 'inline-block';
+    });
+  });
+</script>
 </body>
 </html>
