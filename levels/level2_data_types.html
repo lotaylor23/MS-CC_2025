@@ -195,7 +195,10 @@
         const acceptType = zone.dataset.accept;
         [...zone.children].forEach(child => {
           total++;
-          if (child.dataset.type === acceptType) correct++;
+          if (child.dataset.type === acceptType) {
+            correct++;
+            child.style.color = 'black'; // reset color if previously marked wrong
+          }
           else child.style.color = 'red'; // highlight wrong answers
         });
       });
@@ -204,6 +207,10 @@
         resultDiv.textContent = 'Please sort at least one item.';
         return;
       }
+      else if (total < 8) {
+    resultDiv.textContent = 'Please place all items before checking.';
+    return;
+  } 
 
       resultDiv.textContent = `You got ${correct} out of ${total} correct. ${
         correct === total
@@ -211,7 +218,7 @@
           : "Check the red items and try again."
       }`;
       //  Show "Next Level" button only if all answers are correct
-  if (correct === total) {
+  if (correct === total && total === 8) {
     document.getElementById('nextLevelBtn').style.display = 'inline-block';
   }
     });
