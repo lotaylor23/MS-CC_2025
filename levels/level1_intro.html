@@ -165,6 +165,9 @@ function onLevelComplete() {
           ? "Awesome! You're ready for the next stage."
           : "Try again or review the intro above."
       }`;
+      if (score === 3) {
+    onLevelComplete(); 
+  }
       
     });
     
