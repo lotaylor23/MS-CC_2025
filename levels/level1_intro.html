@@ -128,12 +128,22 @@
   <script>
     const quizForm = document.getElementById('quiz-form');
     const quizResult = document.getElementById('quiz-result');
+    const nextLevelBtn = document.getElementById('nextLevelBtn');
 
     const answers = {
       q1: 'b',
       q2: 'b',
       q3: 'b'
     };
+
+    // Example: after quiz passed or level complete:
+function onLevelComplete() {
+  nextLevelBtn.style.display = 'inline-block';
+  // Change href to the next level:
+  nextLevelBtn.onclick = () => {
+    window.location.href = 'levels/level2_data_types.html'; // Adjust for each level
+  };
+}
 
     quizForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -151,7 +161,13 @@
           ? "Awesome! You're ready for the next stage."
           : "Try again or review the intro above."
       }`;
+      
     });
+    
   </script>
+  <button id="nextLevelBtn" style="display:none; margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor:pointer;">
+  Next Level
+</button>
+
 </body>
 </html>
