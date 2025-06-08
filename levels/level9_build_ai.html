@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stage 9: Build AI Mini Project</title>
+<link rel="stylesheet" href="../style.css" />
+<style>
+  body {
+    max-width: 900px;
+    margin: 30px auto;
+    font-family: 'Courier New', Courier, monospace;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 18px #aaa;
+  }
+  h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  #editor {
+    width: 100%;
+    height: 300px;
+    font-family: monospace;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 10px;
+    resize: vertical;
+  }
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 15px 0;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+  #output {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    background: #f0f4fb;
+    min-height: 120px;
+    padding: 15px;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 16px;
+    color: #222;
+  }
+  footer {
+    margin-top: 35px;
+    text-align: center;
+  }
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  #loading {
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<h2>Stage 9: Build AI Mini Project</h2>
+<p>Try editing and running this simple AI-inspired Python code that guesses a number!</p>
+
+<div id="loading">Loading Python runtime, please wait...</div>
+
+<textarea id="editor" spellcheck="false" disabled>
+import random
+
+print("Welcome to the Number Guessing AI!")
+number = random.randint(1, 20)
+
+for attempt in range(1, 6):
+    guess = int(input("Guess a number between 1 and 20: "))
+    if guess == number:
+        print(f"Correct! You guessed the number in {attempt} tries.")
+        break
+    elif guess < number:
+        print("Too low! Try again.")
+    else:
+        print("Too high! Try again.")
+else:
+    print(f"Sorry, you didn't guess it. The number was {number}.")
+</textarea>
+
+<button id="runBtn" disabled>Run Code</button>
+
+<div id="output"></div>
+
+<footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+<script>
+  let pyodide = null;
+  let outputDiv = document.getElementById('output');
+  let runBtn = document.getElementById('runBtn');
+  let editor = document.getElementById('editor');
+  let loadingText = document.getElementById('loading');
+
+  async function loadPyodideAndPackages() {
+    pyodide = await loadPyodide();
+    loadingText.textContent = 'Python runtime loaded. You can run the code now!';
+    runBtn.disabled = false;
+    editor.disabled = false;
+  }
+
+  loadPyodideAndPackages();
+
+  // Capture input for input() calls
+  async function getUserInput(prompt) {
+    return new Promise((resolve) => {
+      const userInput = window.prompt(prompt);
+      resolve(userInput);
+    });
+  }
+
+  // Override Python's input() function in pyodide
+  async function runCode() {
+    outputDiv.textContent = '';
+    try {
+      // Redirect print statements
+      pyodide.globals.set("print", (text) => {
+        outputDiv.textContent += text + '\n';
+      });
+
+      // Override input
+      pyodide.registerJsModule("jsinput", { input: getUserInput });
+      await pyodide.runPythonAsync(`
+import jsinput
+def input(prompt=None):
+    return jsinput.input(prompt if prompt else '')
+      `);
+
+      // Run user code
+      const userCode = editor.value;
+      await pyodide.runPythonAsync(userCode);
+    } catch (err) {
+      outputDiv.textContent += "\nError:\n" + err;
+    }
+  }
+
+  runBtn.addEventListener('click', runCode);
+</script>
+
+</body>
+</html>
