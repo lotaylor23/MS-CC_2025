@@ -124,13 +124,11 @@
       <p><a href="../index.html">Back to Main Menu</a></p>
     </footer>
   </div>
- <button id="nextLevelBtn" style="display:none; margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor:pointer;">
-  Next Level
-</button>
+ 
   <script>
     const quizForm = document.getElementById('quiz-form');
     const quizResult = document.getElementById('quiz-result');
-    const nextLevelBtn = document.getElementById('nextLevelBtn');
+   
 
     const answers = {
       q1: 'b',
@@ -165,6 +163,7 @@ function onLevelComplete() {
       quizResult.textContent = `You scored ${score} out of 3. ${
         score === 3
           ? "Awesome! You're ready for the next stage."
+         const nextLevelBtn = document.getElementById('nextLevelBtn');
           : "Try again or review the intro above."
       }`;
       
@@ -172,6 +171,8 @@ function onLevelComplete() {
     
   </script>
  
-
+<button id="nextLevelBtn" style="display:none; margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor:pointer;">
+  Next Level
+</button>
 </body>
 </html>
