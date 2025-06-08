@@ -169,12 +169,23 @@
       const data = e.dataTransfer.getData('text/plain');
       const [type, text] = data.split('|');
 
+      // Prevent duplicates
+      //if ([...e.currentTarget.children].some(child => child.textContent === text)) return;
+
+
       // Create a new element inside the dropzone
       const newElem = document.createElement('div');
       newElem.textContent = text;
       newElem.classList.add('draggable');
       newElem.setAttribute('data-type', type);
       //newElem.setAttribute('draggable', 'false'); // Disable dragging from dropzone
+      newElem.setAttribute('draggable', 'true');
+
+      // Allow it to be dragged again from drop zone
+  newElem.addEventListener('dragstart', dragStart);
+
+  // Add it to the dropzone
+  e.currentTarget.appendChild(newElem);
 
       // Prevent duplicates
       if (![...e.currentTarget.children].some(child => child.textContent === text)) {
