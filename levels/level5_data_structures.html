@@ -98,12 +98,16 @@
 <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
   Time left: <span id="time">60</span> seconds
 </div>
+  
+
 <h2>Stage 5: Data Structures Memory Match</h2>
 <p>Match the Python data structure with its description or example.</p>
 
 <div id="game-board"></div>
 <div id="message"></div>
-
+<div style="text-align: center; margin-top: 20px;">
+  <button id="nextLevelBtn" style="display: none;">Next Level</button>
+</div>
 <footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
 
 <script>
@@ -166,6 +170,7 @@
       flippedCards = [];
       if (matchedCount === pairs.length / 2) {
         document.getElementById('message').textContent = '🎉 Congratulations! You matched all pairs!';
+        document.getElementById('nextLevelBtn').style.display = 'inline-block';
       }
     } else {
       setTimeout(() => {
