@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
-  Time left: <span id="time">60</span> seconds
-</div>
+  
 
 <meta charset="UTF-8" />
 <title>Stage 8: Introduction to AI</title>
@@ -90,7 +88,9 @@
 </style>
 </head>
 <body>
-
+<div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
+  Time left: <span id="time">60</span> seconds
+</div>
 <h2>Stage 8: Introduction to AI</h2>
 
 <div id="animation">
@@ -158,6 +158,9 @@
     resultDiv.textContent = `You scored ${score} out of 2. ` + (score === 2 ? 'Great job!' : 'Keep learning!');
   });
 </script>
-
+<script src="../script.js"></script>
+<script>
+  startTimer(); // 👈 This line starts the countdown
+</script>
 </body>
 </html>
