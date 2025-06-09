@@ -126,21 +126,25 @@
   const moduleData = {
     os: {
       desc: "Provides functions to interact with the operating system.",
+      link: "https://www.geeksforgeeks.org/os-module-python-examples/",
       example: `import os
 print(os.getcwd())  # Prints current working directory`
     },
     sys: {
       desc: "Provides access to variables and functions related to the Python interpreter.",
+      link: "https://www.geeksforgeeks.org/os-module-vs-sys-module-in-python/",
       example: `import sys
 print(sys.version)  # Prints Python version`
     },
     shutil: {
       desc: "High-level file operations like copying and archiving.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `import shutil
 shutil.copy('source.txt', 'dest.txt')  # Copy a file`
     },
     json: {
       desc: "Encode and decode JSON data.",
+      link: "https://www.geeksforgeeks.org/read-json-file-using-python/",
       example: `import json
 data = {'name': 'Alice', 'age': 30}
 json_str = json.dumps(data)
@@ -148,6 +152,7 @@ print(json_str)`
     },
     csv: {
       desc: "Read and write CSV files.",
+      link: "https://www.geeksforgeeks.org/working-csv-files-python/",
       example: `import csv
 with open('data.csv', 'r') as file:
     reader = csv.reader(file)
@@ -156,6 +161,7 @@ with open('data.csv', 'r') as file:
     },
     pickle: {
       desc: "Serialize and deserialize Python objects.",
+      link: "https://www.geeksforgeeks.org/understanding-python-pickling-example/",
       example: `import pickle
 data = {'a': 1, 'b': 2}
 with open('data.pkl', 'wb') as f:
@@ -163,53 +169,72 @@ with open('data.pkl', 'wb') as f:
     },
     math: {
       desc: "Provides mathematical functions.",
+      links: [
+        { label: "Official Docs", url: "https://www.geeksforgeeks.org/shutil-module-in-python/"},
+        { label: "W3Schools", url: "https://www.w3schools.com/python/module_math.asp"},        
+        ],
       example: `import math
 print(math.sqrt(16))  # Prints 4.0`
     },
     random: {
       desc: "Generate random numbers and selections.",
+      links: [
+        { label: "GeeksforGeeks", url: "https://www.geeksforgeeks.org/python-random-module/"},
+        { label: "W3Schools", url: "https://www.w3schools.com/python/module_random.asp"},        
+        ],
       example: `import random
 print(random.randint(1, 10))  # Random int between 1 and 10`
     },
     statistics: {
       desc: "Basic statistical functions.",
+       links: [
+         { label: "Official Docs", url: "https://docs.python.org/3/library/statistics.html"},
+        { label: "Other Statistics with Tutorials point(file stats)", url: "https://www.tutorialspoint.com/How-to-get-stat-of-a-file-using-Python"},
+        { label: "W3Schools", url: "https://www.w3schools.com/python/module_statistics.asp"},        
+        ],
       example: `import statistics
 data = [1, 2, 3, 4, 5]
 print(statistics.mean(data))`
-    },
+    },/*
     socket: {
       desc: "Low-level networking interface.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)`
     },
     urllib: {
       desc: "Work with URLs and HTTP requests.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `from urllib import request
 response = request.urlopen('http://example.com')
 print(response.status)`
     },
     http: {
       desc: "HTTP modules and client/server functionality.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `from http.server import HTTPServer, BaseHTTPRequestHandler`
     },
     datetime: {
       desc: "Work with dates and times.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `import datetime
 print(datetime.datetime.now())`
     },
     logging: {
       desc: "Flexible logging system.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `import logging
 logging.warning('This is a warning!')`
     },
     threading: {
       desc: "Run code concurrently using threads.",
+      link: "https://www.geeksforgeeks.org/shutil-module-in-python/",
       example: `import threading
 def worker():
     print("Worker thread")
 t = threading.Thread(target=worker)
 t.start()`
-    },
+    },*/
   };
 
   const modules = document.querySelectorAll('.module');
@@ -220,7 +245,8 @@ t.start()`
       const modName = mod.dataset.module;
       const data = moduleData[modName];
       if (data) {
-        infoDiv.innerHTML = `<strong>${modName}</strong>: ${data.desc}\n\nExample:\n<pre>${data.example}</pre>`;
+        infoDiv.innerHTML = `<strong>${modName}</strong>: ${data.desc}\n\nExample:\n<pre>${data.example}</pre>
+        ${data.links ? data.links.map(link => `<a href="${link.url}" target="_blank">${link.label}</a><br>`).join('') : ''}`;
       } else {
         infoDiv.textContent = "Information not found.";
       }
