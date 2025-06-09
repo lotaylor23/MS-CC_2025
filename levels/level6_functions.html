@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
-  Time left: <span id="time">60</span> seconds
-</div>
+  
 
 <meta charset="UTF-8" />
 <title>Stage 6: Functions Code Editor Mini-Lab</title>
@@ -75,7 +73,9 @@
 </style>
 </head>
 <body>
-
+<div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
+  Time left: <span id="time">60</span> seconds
+</div>
 <h2>Stage 6: Functions Code Editor Mini-Lab</h2>
 
 <div id="challenge">
@@ -84,8 +84,7 @@
 
 <textarea id="code" spellcheck="false">
 def greet(name):
-    # Your code here
-    return "Hello, " + name + "!"
+   
 </textarea>
 
 <button id="run-btn">Run Code</button>
@@ -106,7 +105,7 @@ def greet(name):
     pyodide = await loadPyodide();
     output.textContent = 'Python runtime loaded. You can run your code now.';
   }
-
+/*
   function runPythonCode(code) {
     output.textContent = '';
     try {
@@ -115,12 +114,32 @@ def greet(name):
 
       // Test the greet function by calling it from JS
       let greetResult = pyodide.runPython(`greet("World")`);
-      output.textContent += `greet("World") returned: ${greetResult}`;
+      output.textContent += returned: ${greetResult}; // `greet("World") returned: ${greetResult}`;
     } catch (err) {
       output.textContent = `Error:\n${err}`;
     }
   }
+*/
+  async function runPythonCode(code) {
+  output.textContent = '';
+  try {
+    let result = pyodide.runPython(code);
+      output.textContent = 'Code ran successfully.\n\n';
 
+      // Test the greet function by calling it from JS
+    // Capture print() output
+    pyodide.setStdout({
+      batched: (msg) => { output.textContent += msg; }
+    });
+    pyodide.setStderr({
+      batched: (msg) => { output.textContent += msg; }
+    });
+
+    await pyodide.runPythonAsync(code);
+  } catch (err) {
+    output.textContent += `\nError: ${err}`;
+  }
+}
   runBtn.addEventListener('click', () => {
     if (!pyodide) {
       output.textContent = 'Python runtime is still loading...';
