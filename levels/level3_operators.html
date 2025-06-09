@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
-  Time left: <span id="time">60</span> seconds
-</div>
+  
 
 <meta charset="UTF-8" />
 <title>Stage 3: Operators Puzzle Challenge</title>
@@ -88,7 +86,9 @@
 </style>
 </head>
 <body>
-
+<div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
+  Time left: <span id="time">60</span> seconds
+</div>
 <h2>Stage 3: Operators Puzzle Challenge</h2>
 
 <form id="puzzle-form">
@@ -127,7 +127,11 @@
 </form>
 
 <div id="result"></div>
-
+<div id="next-stage" style="display: none; text-align: center; margin-top: 20px;">
+  <a href="stage4.html">
+    <button>Next Level</button>
+  </a>
+</div>
 <footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
 
 <script>
@@ -195,15 +199,22 @@
     });
 
     const result = document.getElementById('result');
+    const nextStage = document.getElementById('next-stage');
+
     if (correctCount === questions.length) {
       result.textContent = "Awesome! All answers are correct. Ready for the next stage!";
       result.style.color = "green";
+      nextStage.style.display = "block"; // ✅ Show the button
     } else {
       result.textContent = `You got ${correctCount} out of ${questions.length} correct. Try again!`;
       result.style.color = "red";
+      nextStage.style.display = "none"; // ❌ Hide if answers are incorrect
     }
   });
 </script>
-
+<script src="../script.js"></script>
+<script>
+  startTimer(); // 👈 This line starts the countdown
+</script>
 </body>
 </html>
