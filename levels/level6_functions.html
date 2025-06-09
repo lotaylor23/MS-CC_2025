@@ -138,6 +138,17 @@ def greet(name):
     });
 
     await pyodide.runPythonAsync(code);
+    /*
+    // Test greet() after user's code runs
+    const result = pyodide.runPython(`greet("World")`);
+    output.textContent += `\n\n✅ greet("World") returned: "${result}"`;
+
+    // Check if it's correct
+    if (result.trim() === "Hello, World!") {
+      output.textContent += "\n🎉 Great job!";
+      document.getElementById("nextLevelBtn").style.display = "inline-block";
+    }
+    */
   } catch (err) {
     output.textContent += `\nError: ${err}`;
   }
