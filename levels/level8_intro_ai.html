@@ -160,7 +160,15 @@
 </script>
 <script src="../script.js"></script>
 <script>
-  startTimer(); // 👈 This line starts the countdown
+  document.addEventListener('DOMContentLoaded', () => {
+    startTimer(60, () => {
+      alert("Time is up! Review and try again.");
+      document.getElementById("nextLevelBtn").style.display = "inline-block";
+    });
+    document.getElementById('nextLevelBtn').onclick = () => {
+  window.location.href = '../levels/level3_operators.html'; // Adjust this to the actual path
+};
+  });
 </script>
 </body>
 </html>
