@@ -2,9 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
-  Time left: <span id="time">60</span> seconds
-</div>
+  
 
   <meta charset="UTF-8" />
   <title>Control Structures - Drag & Drop</title>
@@ -17,6 +15,9 @@
   </style>
 </head>
 <body>
+  <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
+  Time left: <span id="time">60</span> seconds
+</div>
   <header><h1>Level 4: Control Structures - Drag & Drop</h1></header>
 
   <main>
@@ -44,5 +45,9 @@
       trashcan: true
     });
   </script>
+  <script src="../script.js"></script>
+<script>
+  startTimer(); // 👈 This line starts the countdown
+</script>
 </body>
 </html>
