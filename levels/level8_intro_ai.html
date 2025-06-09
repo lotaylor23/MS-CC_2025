@@ -120,6 +120,9 @@
 
   <div id="result"></div>
 </div>
+<div style="text-align: center; margin-top: 20px;">
+  <button id="nextLevelBtn" style="display: none;">Next Level</button>
+</div>
 
 <footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
 
@@ -156,6 +159,9 @@
     if (q2.value === 'a') score++;
 
     resultDiv.textContent = `You scored ${score} out of 2. ` + (score === 2 ? 'Great job!' : 'Keep learning!');
+    if (score === 2) {
+  document.getElementById("nextLevelBtn").style.display = "inline-block";
+}
   });
 </script>
 <script src="../script.js"></script>
