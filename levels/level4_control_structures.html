@@ -15,6 +15,9 @@
   </style>
 </head>
 <body>
+  <div style="text-align:center; margin-top: 20px;">
+  <button id="nextLevelBtn" style="display: none;">Next Level</button>
+</div>
   <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
   Time left: <span id="time">60</span> seconds
 </div>
@@ -22,6 +25,7 @@
 
   <main>
     <p>Use blocks to build conditional statements and loops!</p>
+    <p>Your code must contain either a for, while, or if</p>
     <div id="blocklyDiv"></div>
     <xml id="toolbox" style="display: none">
       <block type="controls_if"></block>
@@ -68,7 +72,23 @@ totalTime += timeTaken;
 // Save it back to localStorage
 localStorage.setItem('totalTime', totalTime);
       //////////////////////
+      
 };
+    // ✅ Blockly validation check
+    const workspace = Blockly.getMainWorkspace();
+    workspace.addChangeListener(() => {
+      const code = Blockly.JavaScript.workspaceToCode(workspace);
+
+      // ✅ Basic check: Must contain a loop or if-statement
+      const hasLoop = code.includes('for') || code.includes('while');
+      const hasIf = code.includes('if');
+
+      if (hasLoop || hasIf) {
+        document.getElementById("nextLevelBtn").style.display = "inline-block";
+      } else {
+        document.getElementById("nextLevelBtn").style.display = "none";
+      }
+    });
   });
 </script>
 </body>
