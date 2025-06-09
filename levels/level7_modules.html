@@ -119,6 +119,9 @@
 </div>
 
 <div id="info">Click a module above to see its description and example.</div>
+<div style="text-align: center; margin-top: 20px;">
+  <button id="nextLevelBtn" style="display: none;">Next Level</button>
+</div>
 
 <footer><p><a href="../index.html">Back to Main Menu</a></p></footer>
 
@@ -239,10 +242,13 @@ t.start()`
 
   const modules = document.querySelectorAll('.module');
   const infoDiv = document.getElementById('info');
+  const clickedModules = new Set();
 
   modules.forEach(mod => {
     mod.addEventListener('click', () => {
       const modName = mod.dataset.module;
+      clickedModules.add(modName); // Track clicked module
+
       const data = moduleData[modName];
       if (data) {
         infoDiv.innerHTML = `<strong>${modName}</strong>: ${data.desc}\n\nExample:\n<pre>${data.example}</pre>
@@ -250,6 +256,10 @@ t.start()`
       } else {
         infoDiv.textContent = "Information not found.";
       }
+      // Check if all modules have been clicked
+    if (clickedModules.size === modules.length) {
+      document.getElementById("nextLevelBtn").style.display = "inline-block";
+    }
     });
   });
 </script>
