@@ -262,6 +262,20 @@ t.start()`
     });
     document.getElementById('nextLevelBtn').onclick = () => {
   window.location.href = '../levels/level8_intro_ai.html'; // Adjust this to the actual path
+      ////////////////////////
+      // Get time left and calculate time taken for this stage
+const timeLeft = parseInt(document.getElementById('time').textContent);
+const timeTaken = 60 - timeLeft; // assuming each stage is 60 seconds
+
+// Get cumulative time from localStorage
+let totalTime = parseInt(localStorage.getItem('totalTime')) || 0;
+
+// Add this stage's time to the total
+totalTime += timeTaken;
+
+// Save it back to localStorage
+localStorage.setItem('totalTime', totalTime);
+      //////////////////////
 };
   });
 </script>
