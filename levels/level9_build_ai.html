@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
-  Time left: <span id="time">60</span> seconds
-</div>
+  
 
 <meta charset="UTF-8" />
 <title>Stage 9: Build AI Mini Project</title>
@@ -74,7 +72,9 @@
 </style>
 </head>
 <body>
-
+<div id="timer" style="font-weight:bold; font-size:1.2rem; color:#e74c3c; margin-bottom:15px;">
+  Time left: <span id="time">60</span> seconds
+</div>
 <h2>Stage 9: Build AI Mini Project</h2>
 <p>Try editing and running this simple AI-inspired Python code that guesses a number!</p>
 
@@ -157,6 +157,9 @@ def input(prompt=None):
 
   runBtn.addEventListener('click', runCode);
 </script>
-
+<script src="../script.js"></script>
+<script>
+  startTimer(); // 👈 This line starts the countdown
+</script>
 </body>
 </html>
