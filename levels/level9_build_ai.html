@@ -140,20 +140,26 @@ else:
       });
 
       // Override input
-      pyodide.registerJsModule("jsinput", { input: getUserInput });
+      pyodide.registerJsModule("jsinput", { 
+        async input(prompt) {
+        return window.prompt(prompt || "");
+      }
+    });
       await pyodide.runPythonAsync(`
 import jsinput
-def input(prompt=None):
-    return jsinput.input(prompt if prompt else '')
-      `);
+async def input(prompt=None):
+    return await jsinput.input(prompt or "")
 
-      // Run user code
-      const userCode = editor.value;
-      await pyodide.runPythonAsync(userCode);
-    } catch (err) {
-      outputDiv.textContent += "\nError:\n" + err;
-    }
+async def main():
+${editor.value.split('\n').map(line => '    ' + line).join('\n')}
+
+import asyncio
+await main()
+    `);
+  } catch (err) {
+    outputDiv.textContent += "\nError:\n" + err;
   }
+}
 
   runBtn.addEventListener('click', runCode);
 </script>
