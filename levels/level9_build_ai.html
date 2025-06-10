@@ -141,7 +141,8 @@ else:
       pyodide.globals.set("print", (text) => {
         outputDiv.textContent += text + '\n';
       });
-
+////////////
+      /*
       // Override input
       pyodide.registerJsModule("jsinput", { 
         async input(prompt) {
@@ -150,6 +151,7 @@ else:
     });
       await pyodide.runPythonAsync(`
 import jsinput
+
 async def input(prompt=None):
     return await jsinput.input(prompt or "")
 
@@ -158,6 +160,20 @@ ${editor.value.split('\n').map(line => '    ' + line).join('\n')}
 
 import asyncio
 await main()
+    `);
+      //////////////
+      */
+      // Register the JS input module
+    pyodide.registerJsModule("jsinput", {
+      input: window.prompt
+    });
+
+    await pyodide.runPythonAsync(`
+import jsinput
+import builtins
+builtins.input = jsinput.input  # <-- Overwrite the global input()
+
+${editor.value}
     `);
   } catch (err) {
     outputDiv.textContent += "\nError:\n" + err;
