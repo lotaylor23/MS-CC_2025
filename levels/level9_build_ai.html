@@ -142,7 +142,7 @@ else:
         outputDiv.textContent += text + '\n';
       });
 ////////////
-      /*
+      
       // Override input
       pyodide.registerJsModule("jsinput", { 
         async input(prompt) {
@@ -162,7 +162,8 @@ import asyncio
 await main()
     `);
       //////////////
-      */
+      
+      /*
       // Register the JS input module
     pyodide.registerJsModule("jsinput", {
       input: window.prompt
@@ -174,7 +175,7 @@ import builtins
 builtins.input = jsinput.input  # <-- Overwrite the global input()
 
 ${editor.value}
-    `);
+    `);*/
   } catch (err) {
     outputDiv.textContent += "\nError:\n" + err;
   }
