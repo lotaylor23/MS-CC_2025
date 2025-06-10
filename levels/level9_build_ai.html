@@ -136,46 +136,13 @@ else:
   // Override Python's input() function in pyodide
   async function runCode() {
     outputDiv.textContent = '';
+    
     try {
       // Redirect print statements
       pyodide.globals.set("print", (text) => {
         outputDiv.textContent += text + '\n';
       });
-////////////
-      /*
-      // Override input
-      pyodide.registerJsModule("jsinput", { 
-        async input(prompt) {
-        return window.prompt(prompt || "");
-      }
-    });
-      await pyodide.runPythonAsync(`
-import jsinput
-
-async def input(prompt=None):
-    return await jsinput.input(prompt or "")
-
-async def main():
-${editor.value.split('\n').map(line => '    ' + line).join('\n')}
-
-import asyncio
-await main()
-    `);
-      //////////////
-      */
-      /*
-      // Register the JS input module
-    pyodide.registerJsModule("jsinput", {
-      input: window.prompt
-    });
-
-    await pyodide.runPythonAsync(`
-import jsinput
-import builtins
-builtins.input = jsinput.input  # <-- Overwrite the global input()
-
-${editor.value}
-    `);*/
+      
 // Register a JS module that uses window.prompt for input
     pyodide.registerJsModule("jsinput", {
       input: (prompt) => window.prompt(prompt || "")
@@ -189,7 +156,8 @@ builtins.input = jsinput.input
 
 ${editor.value}
     `);
-
+// When Python code finishes, show Next Level button
+    document.getElementById("nextLevelBtn").style.display = "inline-block";
   } catch (err) {
     outputDiv.textContent += "\nError:\n" + err;
   }
