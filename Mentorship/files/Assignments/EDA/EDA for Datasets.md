@@ -39,7 +39,8 @@ Now you will practice the data gathering step in EDA. In this step, you first pl
 + Are there specific cohorts/subjects that need to be included?
 + What areas do I want to study the relationship to?
 + What is the overall subject that I will study?
-<br>These and more are going to affect what data points you will need to collect and evaluate for usefulness.  In this exercise, we have picked the the dataset for you.
+
+These and more are going to affect what data points you will need to collect and evaluate for usefulness.  In this exercise, we have picked the the dataset for you.
 
 #### Download a dataset
 Step 1:
