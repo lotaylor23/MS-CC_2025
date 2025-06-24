@@ -23,8 +23,8 @@ Here's a more detailed breakdown:
 1. Data Collection: Gathering the relevant data from various sources. 
 2. Data Cleaning: Handling missing values, removing duplicates, and correcting inconsistencies in the data. 
 3. Data Exploration:
-  + Univariate Analysis: Examining individual variables using descriptive statistics (mean, median, standard deviation, etc.) and visualizations like histograms and box plots. 
-  + Bivariate Analysis: Exploring relationships between pairs of variables using scatter plots, correlation matrices, and other techniques. 
+  ++ Univariate Analysis: Examining individual variables using descriptive statistics (mean, median, standard deviation, etc.) and visualizations like histograms and box plots. 
+  ++ Bivariate Analysis: Exploring relationships between pairs of variables using scatter plots, correlation matrices, and other techniques. 
 4. Data Visualization: Creating visual representations of the data to identify patterns, trends, and outliers. Common visualizations include scatter plots, bar charts, line charts, heatmaps, and box plots. 
 5. Handling Outliers: Identifying and dealing with extreme values that may skew analysis. 
 6. Feature Engineering: Creating new features from existing ones to potentially improve model performance. 
