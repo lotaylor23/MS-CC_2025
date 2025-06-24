@@ -61,6 +61,7 @@ We are going to load this data into our enviroment for exploration. This will re
 + import numpy as np
 + import pandas as pd
 + from matplotlib import pyplot as plt
+  
 This will allow us to operate on the file and any data generated going forward.
 
 #### Preview the data
