@@ -56,6 +56,7 @@ From there enter some search criteria to test and download only one of the files
 Step 4:
 Your data should be downloaded to an accessible location that you will be able to explore or open either locally or in your cloud storage. This is important in case you will need to open in excel or use in Jupyter, Colab etc. If you are having toruble, you may also use this dataset that is gathered from the Climate Normals by NOAA in this repository's hub describing Normal Daily Maximum Temperature, °F. Data also can be found at:
 + https://www.ncei.noaa.gov/products/land-based-station/comparative-climatic-data
+
 We are going to load this data into our enviroment for exploration. This will require the use of the read_csv() funtion. If your data is not in csv format, then you may want to convert it. Open Jupyter and import the libraries needed to work with this file. There are some standard ones so we'll get those out ouf the way first. The lines of code should resemble:
 + import numpy as np
 + import pandas as pd
