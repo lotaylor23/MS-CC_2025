@@ -57,11 +57,13 @@ Step 3:
 Step 4:
 <br>Your data should be downloaded to an accessible location that you will be able to explore or open either locally or in your cloud storage. This is important in case you will need to open in excel or use in Jupyter, Colab etc. If you are having toruble, you may also use this dataset that is gathered from the Climate Normals by NOAA in this repository's hub describing Normal Daily Maximum Temperature, °F. Data also can be found at:
 + https://www.ncei.noaa.gov/products/land-based-station/comparative-climatic-data
-<br>We are going to load this data into our enviroment for exploration. This will require the use of the read_csv() funtion. If your data is not in csv format, then you may want to convert it. Open Jupyter and import the libraries needed to work with this file. There are some standard ones so we'll get those out ouf the way first. The lines of code should resemble:
+
+We are going to load this data into our enviroment for exploration. This will require the use of the read_csv() funtion. If your data is not in csv format, then you may want to convert it. Open Jupyter and import the libraries needed to work with this file. There are some standard ones so we'll get those out ouf the way first. The lines of code should resemble:
 + import numpy as np
 + import pandas as pd
 + from matplotlib import pyplot as plt
-<br>This will allow us to operate on the file and any data generated going forward.
+
+This will allow us to operate on the file and any data generated going forward.
 
 #### Preview the data
 Step 5:
@@ -73,14 +75,17 @@ Step 6:
 <br>What is in our data? This can be answered several ways. For a short preview we can look into the size, small extract of the data and basic info. Let's look at each one in order.
 + Size of the data
 ++ print(data.size)
-<br>The size attribute returns the total number of elements. For a DataFrame, this is the product of the number of rows and columns. For a Series, it is simply the number of elements in the Series.
+
+The size attribute returns the total number of elements. For a DataFrame, this is the product of the number of rows and columns. For a Series, it is simply the number of elements in the Series.
 
 ++ print(data.shape)
-<br>The shape attribute returns a tuple representing the dimensions. For a DataFrame, it returns (number_of_rows, number_of_columns). For a Series, it returns (number_of_elements,)
+
+The shape attribute returns a tuple representing the dimensions. For a DataFrame, it returns (number_of_rows, number_of_columns). For a Series, it returns (number_of_elements,)
 
 + Small extract of the data
 ++ data.head()
-<br>This is a method in the pandas library for Python, primarily used with DataFrames or Series. Its purpose is to display the first n rows of the object. By default, when called without any arguments, df.head() returns the first 5 rows of the DataFrame df. The number of rows returned can be specified by passing an integer argument n to the method. This method is commonly used for a quick initial inspection of a dataset to understand its structure, data types, and content.
+
+This is a method in the pandas library for Python, primarily used with DataFrames or Series. Its purpose is to display the first n rows of the object. By default, when called without any arguments, df.head() returns the first 5 rows of the DataFrame df. The number of rows returned can be specified by passing an integer argument n to the method. This method is commonly used for a quick initial inspection of a dataset to understand its structure, data types, and content.
 
 + Basic data info
 ++ data.info()
