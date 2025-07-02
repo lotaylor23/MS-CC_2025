@@ -4,8 +4,6 @@
 - Run each code snippet in the notebook Compare analysis with materials read in power point slides
 -  Run each code snippet in the notebook Compare analysis with materials read in power point slides
 -  Come with questions for next session
-  - Sub Item 1
-  - Sub Item 2
 
 More information about dataset
 https://ecologicaldata.org/wiki/pantheria 
