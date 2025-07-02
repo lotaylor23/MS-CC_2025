@@ -6,7 +6,7 @@
 -  Come with questions for next session
 -  Ignore Linear Regression error and move to next step
 
--  Hyperparameter training:
+-  Hyperparameter tuning:
 -  Use the code snippet below to hyperparamter tune Random Forest (RF) Classifier model
 ```
 param_grid = {
@@ -26,7 +26,7 @@ grid_search.fit(X_train_pre, y_train)
 print("Best parameters:", grid_search.best_params_)
 print("Best CV score:", grid_search.best_score_)
 ```
-
+- Try different values for hyperparameter tunning
 
 More information about dataset
 https://ecologicaldata.org/wiki/pantheria 
