@@ -64,7 +64,7 @@ plt.show()
 - Follow the Random Forest Regressor Tutorial 
 - Download the Position Salaries csv file
 - Read the tutorial on Random Forest Regressor and create a Jupyter Notebook to implement all steps within tutorial. 
-- https://www.geeksforgeeks.org/dsa/random-forest-classifier-using-scikit-learn/
+- https://www.geeksforgeeks.org/machine-learning/random-forest-regression-in-python/
 
 ```
 import pandas as pd
