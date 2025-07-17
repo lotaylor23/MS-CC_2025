@@ -30,6 +30,7 @@ Asmah Muallem, Ph.D. joined Meharry School of Applied Computational Sciences in 
 
 Her experience includes research and teaching assistant roles along with several years of experience in the tech sector, most recently as a machine learning engineer leveraging machine learning, data science, software engineering, cybersecurity and research.  
 <br>
+<br>
 Roles mentoring students in many machine learning and data science initiatives highlight her academic experience. As a researcher she has published work and contributed to several machine learning projects aimed at developing techniques for cybersecurity and big data. 
 
 Her career also includes twenty years of progressive tech roles, including stints as programmer, computer systems analyst, QA automation analyst, mobile developer before her most recent machine learning engineer position. 
