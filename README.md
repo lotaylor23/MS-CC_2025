@@ -30,6 +30,6 @@ Roles mentoring students in many machine learning and data science initiatives h
 
 Her career also includes twenty years of progressive tech roles, including stints as programmer, computer systems analyst, QA automation analyst, mobile developer before her most recent machine learning engineer position. 
 
-<img src="assets/imagesloni-new-headshot-2048x1365.jpg" width="300" height="300">
+<img src="assets/images/loni-new-headshot-2048x1365.jpg" width="300" height="300">
 
 Loni Taylor, MS, PMP, CETL
