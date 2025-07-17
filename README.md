@@ -15,7 +15,7 @@ Justin Freeman
 
 ### Mentors:
 
-<img src="./images/muallen_asmah_use-scaled-e1738080624498.jpg alt="Alt Text" width="300" height="200">
+<img src="./images/muallen_asmah_use-scaled-e1738080624498.jpg" alt="Alt Text" width="300" height="200">
 
 Asmah Muallem, Ph.D.
 
