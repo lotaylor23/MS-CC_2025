@@ -1,8 +1,5 @@
 # MS-CC_2025
-## Meet the Team:
-
-### Student Mentees:
-
+## Meet the Team: Student Mentees
 
 <img src="assets/images/IMG_3469.JPG" width="300" height="400">
 
@@ -16,7 +13,7 @@ My professional experiences range from providing compassionate care to seniors a
 
 Justin Freeman
 
-### Mentors:
+## Meet the Team: Mentors
 
 <img src="assets/images/muallen_asmah_use-scaled-e1738080624498.jpg" width="300" height="300">
 
