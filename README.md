@@ -36,6 +36,6 @@ Her career also includes twenty years of progressive tech roles, including stint
 <br clear="left"/>
 
 ***
-<img src="assets/images/loni-new-headshot-2048x1365.jpg" align="left" width="300" height="300">
+<img src="assets/images/loni-new-headshot-2048x1365.jpg" align="left" width="400" height="400">
 
 ### Loni Taylor, MS, PMP, CETL
