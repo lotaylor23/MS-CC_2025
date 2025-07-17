@@ -15,6 +15,8 @@ Justin Freeman
 
 ### Mentors:
 
+<img src="./images/muallen_asmah_use-scaled-e1738080624498.jpg alt="Alt Text" width="300" height="200">
+
 Asmah Muallem, Ph.D.
 
 Asmah Muallem, Ph.D. joined Meharry School of Applied Computational Sciences in January 2025 as assistant professor, computer science and data science. Dr. Muallem is passionate about applying AI/ML technologies to find solutions that address the evolving landscape of cybersecurity, especially the complex challenges of cyber threats in healthcare. She is also an enthusiastic participant in the multi-disciplinary collaborations on the use of AI/ML technologies for the good of society. 
