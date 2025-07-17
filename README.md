@@ -1,7 +1,7 @@
 # MS-CC_2025
 ## Meet the Team: Student Mentees
 
-<img src="assets/images/IMG_3469.JPG" align="left" width="300" height="400"> 
+<img src="assets/images/IMG_3469.JPG" align="left" width="300" height="450"> 
 
 ### Juliet Alozie
 
