@@ -3,7 +3,7 @@
 
 <img src="assets/images/IMG_3469.JPG" align="left" width="300" height="450"> 
 
-### Juliet Alozie
+### Juliet Alozie | LinkedIn
 
 My name is Juliet Oluchukwu Alozie. I am a dedicated Junior at Fisk University pursuing a Bachelor of Science in Biology with a minor in Business. I am also a recipient of multiple honors, including the Fisk Executive Leadership Program scholarship, the Quillin Hastings Award, and W.E.B. Du Bois Honors recognition. Alongside my academic work, I am committed to developing strong leadership skills.
 
