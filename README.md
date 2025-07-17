@@ -4,6 +4,7 @@
 ### Student Mentees:
 
 
+<img src="assets/images/IMG_3469.JPG" width="300" height="400">
 
 Juliet Alozie
 
@@ -11,11 +12,13 @@ My name is Juliet Oluchukwu Alozie. I am a dedicated Junior at Fisk University p
 
 My professional experiences range from providing compassionate care to seniors and individuals with special needs to enhancing historical archives through photo editing and metadata organization. These roles have deepened my compassion and attention to detail traits, which I believe are essential for my future in healthcare as a nurse, where I can continue to serve my community with empathy and professionalism. Whether in a clinical setting or behind the scenes, I strive to make a meaningful impact by combining my knowledge of biology with genuine care for people.
 
+<img src="assets/images/Headshot.jpg" width="300" height="400">
+
 Justin Freeman
 
 ### Mentors:
 
-<img src="./images/muallen_asmah_use-scaled-e1738080624498.jpg" alt="Alt Text" width="300" height="200">
+<img src="assets/images/muallen_asmah_use-scaled-e1738080624498.jpg" width="300" height="300">
 
 Asmah Muallem, Ph.D.
 
@@ -26,5 +29,7 @@ Her experience includes research and teaching assistant roles along with several
 Roles mentoring students in many machine learning and data science initiatives highlight her academic experience. As a researcher she has published work and contributed to several machine learning projects aimed at developing techniques for cybersecurity and big data. 
 
 Her career also includes twenty years of progressive tech roles, including stints as programmer, computer systems analyst, QA automation analyst, mobile developer before her most recent machine learning engineer position. 
+
+<img src="assets/imagesloni-new-headshot-2048x1365.jpg" width="300" height="300">
 
 Loni Taylor, MS, PMP, CETL
