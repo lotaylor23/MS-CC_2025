@@ -29,7 +29,7 @@ Justin Freeman
 Asmah Muallem, Ph.D. joined Meharry School of Applied Computational Sciences in January 2025 as assistant professor, computer science and data science. Dr. Muallem is passionate about applying AI/ML technologies to find solutions that address the evolving landscape of cybersecurity, especially the complex challenges of cyber threats in healthcare. She is also an enthusiastic participant in the multi-disciplinary collaborations on the use of AI/ML technologies for the good of society. 
 
 Her experience includes research and teaching assistant roles along with several years of experience in the tech sector, most recently as a machine learning engineer leveraging machine learning, data science, software engineering, cybersecurity and research.  
-
+<br>
 Roles mentoring students in many machine learning and data science initiatives highlight her academic experience. As a researcher she has published work and contributed to several machine learning projects aimed at developing techniques for cybersecurity and big data. 
 
 Her career also includes twenty years of progressive tech roles, including stints as programmer, computer systems analyst, QA automation analyst, mobile developer before her most recent machine learning engineer position. 
