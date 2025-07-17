@@ -3,7 +3,7 @@
 
 <img src="assets/images/IMG_3469.JPG" align="left" width="300" height="450"> 
 
-### Juliet Alozie | LinkedIn
+### Juliet Alozie | <a href ="http://linkedin.com/in/juliet-alozie-484216248"> LinkedIn </a>
 
 My name is Juliet Oluchukwu Alozie. I am a dedicated Junior at Fisk University pursuing a Bachelor of Science in Biology with a minor in Business. I am also a recipient of multiple honors, including the Fisk Executive Leadership Program scholarship, the Quillin Hastings Award, and W.E.B. Du Bois Honors recognition. Alongside my academic work, I am committed to developing strong leadership skills.
 
@@ -15,7 +15,7 @@ My professional experiences range from providing compassionate care to seniors a
 
 <img src="assets/images/Headshot.jpg" align="left" width="300" height="400">
 
-### Justin Freeman
+### Justin Freeman | <a href ="www.linkedin.com/in/justin-b-freeman-b0b747191"> LinkedIn </a>
 Justin Freeman
 
 <br clear="left"/>
@@ -24,7 +24,7 @@ Justin Freeman
 
 <img src="assets/images/muallen_asmah_use-scaled-e1738080624498.jpg" align="left" width="300" height="400">
 
-### Asmah Muallem, Ph.D.
+### Asmah Muallem, Ph.D. | <a href ="https://www.linkedin.com/in/asmah-muallem/"> LinkedIn </a>
 
 Asmah Muallem, Ph.D. joined Meharry School of Applied Computational Sciences in January 2025 as assistant professor, computer science and data science. Dr. Muallem is passionate about applying AI/ML technologies to find solutions that address the evolving landscape of cybersecurity, especially the complex challenges of cyber threats in healthcare. She is also an enthusiastic participant in the multi-disciplinary collaborations on the use of AI/ML technologies for the good of society. 
 
