@@ -14,7 +14,7 @@
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_115024.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_211025.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_211121.jpg" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223309.jpg" align="left" width="300" height="450"> 
+
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223317.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223319.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223321.jpg" align="left" width="300" height="450"> 
