@@ -15,25 +15,24 @@
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_211025.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_211121.jpg" align="left" width="300" height="450"> 
 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223317.jpg" align="left" width="300" height="450"> 
+
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223319.jpg" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250722_223321.jpg" align="left" width="300" height="450"> 
+
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_085654.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_085716.jpg" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_085719.jpg" align="left" width="300" height="450"> 
+
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_091524.jpg" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_093208.jpg" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_093211.jpg" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_094347.jpg" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1408.png" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1409.png" align="left" width="300" height="450"> 
+
+<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/20250724_094347.jpg" align="left" width="300" height="450">
+
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1410.png" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1412.png" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1416.png" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1417.png" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1418.png" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1424.png" align="left" width="300" height="450"> 
-<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1439.png" align="left" width="300" height="450"> 
+<img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1424.png" align="left" width="300" height="450">
+
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1445.png" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1446.png" align="left" width="300" height="450"> 
 <img src="https://github.com/lotaylor23/MS-CC_2025/blob/main/PEARC25/Photos/IMG_1447.png" align="left" width="300" height="450"> 
