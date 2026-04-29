@@ -39,7 +39,7 @@ Her career also includes twenty years of progressive tech roles, including stint
 ***
 <img src="assets/images/loni-new-headshot-2048x1365.jpg" align="left" width="400" height="400">
 
-### Loni Taylor, MS, PMP, CETL
+### Loni Taylor, ABD, PMP, CETL
 
 Loni is a seasoned data strategist and researcher currently serving as a Data Analysis Manager in K-12 public education. With over 15 years of progressive experience spanning education, technology, data science, and cybersecurity, she blends technical precision with visionary leadership to drive innovation in complex systems. She is a Ph.D. (ABD) candidate in Biomedical Data Sciences at Meharry Medical College, where her interdisciplinary research areas include biomarker discovery/analysis, AI-driven healthcare analytics, cybersecurity for smart systems, and human-machine teaming. Her academic background also includes an M.S. in Computer Science from Texas Southern University and a B.S. in Computer Science from Grambling State University.
 
